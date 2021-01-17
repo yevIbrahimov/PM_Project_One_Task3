@@ -1,0 +1,13 @@
+C:\Users\Lenovo\source\repos\PollAPP\PollAPP\bin\Debug\netcoreapp3.1\PollAPP.exe
+C:\Users\Lenovo\source\repos\PollAPP\PollAPP\bin\Debug\netcoreapp3.1\PollAPP.deps.json
+C:\Users\Lenovo\source\repos\PollAPP\PollAPP\bin\Debug\netcoreapp3.1\PollAPP.runtimeconfig.json
+C:\Users\Lenovo\source\repos\PollAPP\PollAPP\bin\Debug\netcoreapp3.1\PollAPP.runtimeconfig.dev.json
+C:\Users\Lenovo\source\repos\PollAPP\PollAPP\bin\Debug\netcoreapp3.1\PollAPP.dll
+C:\Users\Lenovo\source\repos\PollAPP\PollAPP\bin\Debug\netcoreapp3.1\PollAPP.pdb
+C:\Users\Lenovo\source\repos\PollAPP\PollAPP\obj\Debug\netcoreapp3.1\PollAPP.csprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\PollAPP\PollAPP\obj\Debug\netcoreapp3.1\PollAPP.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\PollAPP\PollAPP\obj\Debug\netcoreapp3.1\PollAPP.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\PollAPP\PollAPP\obj\Debug\netcoreapp3.1\PollAPP.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\PollAPP\PollAPP\obj\Debug\netcoreapp3.1\PollAPP.dll
+C:\Users\Lenovo\source\repos\PollAPP\PollAPP\obj\Debug\netcoreapp3.1\PollAPP.pdb
+C:\Users\Lenovo\source\repos\PollAPP\PollAPP\obj\Debug\netcoreapp3.1\PollAPP.genruntimeconfig.cache
