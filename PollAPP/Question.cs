@@ -8,8 +8,8 @@ namespace PollAPP
 	{
 		public string PollId { get; set; }
 		public string Questions { get; set; }
-		public List<string> Answers { get; set; }
-		public Question(string questions, List<string> answers)
+		public List<Answer> Answers { get; set; }
+		public Question(string questions, List<Answer> answers)
 		{
 			Questions = questions;
 			Answers = answers;

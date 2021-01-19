@@ -37,7 +37,7 @@ namespace PollAPP
 					foreach (var answer in question.Answers)
 					{
 
-						Console.WriteLine($"  {answerCounter}) " + answer);
+						Console.WriteLine($"  {answerCounter}) " + answer.AnswerName);
 						answerCounter++;
 					}
 					questionCounter++;
@@ -63,7 +63,7 @@ namespace PollAPP
 				int answerCounter = 1;
 				foreach (var answer in question.Answers)
 				{
-					Console.WriteLine($"  {answerCounter}) " + answer);
+					Console.WriteLine($"  {answerCounter}) " + answer.AnswerName);
 					answerCounter++;
 				}
 				questionCounter++;

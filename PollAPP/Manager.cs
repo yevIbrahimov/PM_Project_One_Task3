@@ -7,14 +7,18 @@ namespace PollAPP
 {
 	class Manager
 	{
-		
+		AddPoll polls = new AddPoll();
 		public void Manage()
 		{
 			while (true)
 			{
 				Console.Write("Manage poll - 1, add poll - 2, or exit - 0: ");
 				var action = Int32.Parse(Console.ReadLine());
-
+				while (polls.Polls.Count() == 0 && action == 1)
+				{
+					Console.Write("Nothing to manage, add poll oe exit: ");
+					action = Int32.Parse(Console.ReadLine());
+				}
 				while (action!=0 && action != 2 && action != 1)
 				{
 					Console.Write("Only 0, 1, 2!!! Manage poll - 1, add poll - 2, or exit - 0: ");
@@ -34,7 +38,7 @@ namespace PollAPP
 				{
 					pollName = PollName();
 
-					Console.WriteLine("Your actions: 1 - show poll, 2 - delete poll, 3 - remove question, 4 - add question 0 - exit");
+					Console.WriteLine("Your actions: 1 - show poll, 2 - delete poll, 3 - remove question, 4 - add question, 5 - show statistics, 0 - exit");
 					Console.Write("Choose action: ");
 					action = Int32.Parse(Console.ReadLine());
 					action = CheckInput(action);
@@ -62,6 +66,10 @@ namespace PollAPP
 							AddQuestion addQuestion = new AddQuestion();
 							addQuestion.AddQuestionMethod(pollName);
 							break;
+						case 5:
+							Statistics statistics = new Statistics();
+							statistics.StatisticsMethod(pollName);
+							break;
 					}
 				}
 			}
@@ -88,9 +96,9 @@ namespace PollAPP
 		}
 		private int CheckInput(int action)
 		{
-			while (action != 1 && action != 2 && action != 3 && action != 4 && action != 0)
+			while (action != 1 && action != 2 && action != 3 && action != 4 && action != 5 && action != 0)
 			{
-				Console.Write("Just 1,2,3,4,0! Action: ");
+				Console.Write("Just 1, 2, 3, 4, 5, 0! Action: ");
 				action = Int32.Parse(Console.ReadLine());
 			}
 			return action;

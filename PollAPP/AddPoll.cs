@@ -73,7 +73,7 @@ namespace PollAPP
 							}
 						}
 					}
-					List<string> questionAnswers = new List<string>(); //answer List
+					List<Answer> questionAnswers = new List<Answer>(); //answer List
 					
 					while (true)
 					{
@@ -107,7 +107,8 @@ namespace PollAPP
 								}
 							}
 						}
-						questionAnswers.Add(userInput); //answer List
+						Answer answer = new Answer(userInput, 0);
+						questionAnswers.Add(answer); //answer List
 					}
 					Question question = new Question(questionName, questionAnswers);  //new copy of Question
 					questions.Add(question); //List of class Question copies

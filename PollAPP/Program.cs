@@ -9,6 +9,8 @@ namespace PollAPP
 		{
 			Welcome welcome = new Welcome();
 			welcome.WelcomeMethod();
+			Input input = new Input();
+			input.InputMethod();
 			
 		}
 	}
