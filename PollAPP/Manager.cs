@@ -16,7 +16,7 @@ namespace PollAPP
 				var action = Int32.Parse(Console.ReadLine());
 				while (polls.Polls.Count() == 0 && action == 1)
 				{
-					Console.Write("Nothing to manage, add poll oe exit: ");
+					Console.Write("Nothing to manage, add poll or exit: ");
 					action = Int32.Parse(Console.ReadLine());
 				}
 				while (action!=0 && action != 2 && action != 1)
