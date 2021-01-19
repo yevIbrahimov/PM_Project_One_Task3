@@ -8,11 +8,8 @@ namespace PollAPP
 		
 		static void Main(string[] args)
 		{
-
-
-			Input input = new Input();
-			input.UserInput();
-
+			Manager manager = new Manager();
+			manager.Manage();
 		}
 	}
 }
