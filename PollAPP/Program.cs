@@ -5,11 +5,11 @@ namespace PollAPP
 {
 	class Program
 	{
-		
 		static void Main(string[] args)
 		{
-			Manager manager = new Manager();
-			manager.Manage();
+			Welcome welcome = new Welcome();
+			welcome.WelcomeMethod();
+			
 		}
 	}
 }

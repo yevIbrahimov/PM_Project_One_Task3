@@ -11,13 +11,13 @@ namespace PollAPP
 
 		public void ShowPollMethod(string pollName)
 		{
-			if(pollName.ToUpper() == "ALL")
-			{
-				OutputAll(poll.Polls);
-			}
-			else if(pollName == null)
+			if(pollName == null)
 			{
 				Console.WriteLine("There is no such poll");
+			}
+			else if(pollName.ToUpper() == "ALL") 
+			{
+				OutputAll(poll.Polls);
 			}
 			else
 			{
@@ -42,6 +42,7 @@ namespace PollAPP
 					}
 					questionCounter++;
 				}
+				Console.WriteLine();
 			}
 		}
 		private void OutputByName(List<Poll> polls, string pollName)

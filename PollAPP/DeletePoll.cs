@@ -9,14 +9,14 @@ namespace PollAPP
 	{
 		public void DeletePollMethod(string pollNameInput)
 		{
-			AddPoll polls = new AddPoll();
-			foreach (var poll in polls.Polls)
-			{
-				if (poll.PollName == pollNameInput)
-				{
-					polls.Polls.Remove(poll);
-				}
-			}
+			AddPoll addPoll = new AddPoll();
+
+			var deletePoll = from poll in addPoll.Polls
+							 where poll.PollName == pollNameInput
+							 select poll;
+
+			addPoll.Polls.Remove(deletePoll.First());
+			Console.WriteLine("Poll was succesfully deleted");
 		}
 	}
 }

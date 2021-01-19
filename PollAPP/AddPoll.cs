@@ -16,6 +16,8 @@ namespace PollAPP
 				Console.Write("Enter poll name or exit: "); // create poll
 				var userInput = Console.ReadLine();
 
+				CheckEmpty(userInput);
+
 				var checkPollName = from checkName in polls // check new poll name
 									where checkName.PollName == userInput
 									select checkName;
@@ -43,37 +45,66 @@ namespace PollAPP
 					Console.Write("Enter question: "); //user enters question
 					userInput = Console.ReadLine();
 
+					if (userInput.ToUpper() == "EXIT")
+					{
+						return;
+					}
+
+					var questionName = CheckEmpty(userInput);
+					if (userInput.ToUpper() == "EXIT")
+					{
+						return;
+					}
+
 					if (userInput.ToUpper() == "DONE" ) //enough questions
 					{
 						if (questions.Count() > 0) //question count condition (minimum 1 question)
 						{
-							Console.WriteLine("Questions successfully added");
+							Console.WriteLine("Questions were successfully added");
 							break;
 						}
 						else
 						{
 							Console.Write("Minimum 1 question! Add more: ");
 							userInput = Console.ReadLine();
+							if (userInput.ToUpper() == "EXIT")
+							{
+								return;
+							}
 						}
 					}
 					List<string> questionAnswers = new List<string>(); //answer List
-					var questionName = userInput; //set question name
 					
 					while (true)
 					{
 						Console.Write("Enter answer: "); //user enters question
 						userInput = Console.ReadLine();
+
+						if (userInput.ToUpper() == "EXIT")
+						{
+							return;
+						}
+
+						CheckEmpty(userInput);
+						if (userInput.ToUpper() == "EXIT")
+						{
+							return;
+						}
 						if (userInput.ToUpper() == "DONE") //enough answers
 						{
 							if (questionAnswers.Count() > 1)
 							{
-								Console.WriteLine("Answers successfully added");
+								Console.WriteLine("Answers were successfully added");
 								break;
 							}
 							else
 							{
 								Console.Write("Minimum 2 answers! Add more: ");
 								userInput = Console.ReadLine();
+								if (userInput.ToUpper() == "EXIT")
+								{
+									return;
+								}
 							}
 						}
 						questionAnswers.Add(userInput); //answer List
@@ -89,6 +120,17 @@ namespace PollAPP
 		public AddPoll()
 		{
 			Polls = polls;
+		}
+
+		
+		private string CheckEmpty(string userInput)
+		{
+			while (userInput.Trim() == "") //check string, is it empty
+			{
+				Console.Write("Enter something: ");
+				userInput = Console.ReadLine();
+			}
+			return userInput;
 		}
 
 	}

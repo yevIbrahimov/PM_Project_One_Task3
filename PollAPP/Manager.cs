@@ -7,33 +7,57 @@ namespace PollAPP
 {
 	class Manager
 	{
-	
+		
 		public void Manage()
 		{
 			while (true)
 			{
-				Console.Write("Action: ");
+				Console.Write("Manage poll - 1, add poll - 2, or exit - 0: ");
 				var action = Int32.Parse(Console.ReadLine());
 
+				while (action!=0 && action != 2 && action != 1)
+				{
+					Console.Write("Only 0, 1, 2!!! Manage poll - 1, add poll - 2, or exit - 0: ");
+					action = Int32.Parse(Console.ReadLine());
+				}
 				if (action == 0)
 				{
 					break;
 				}
-
-				switch (action)
+				if (action==2)
 				{
-					case 1:
-						AddPoll addPoll = new AddPoll();
-						addPoll.AddPollMethod();
+					AddPoll addPoll = new AddPoll();
+					addPoll.AddPollMethod();
+				}
+				string pollName = "";
+				if (action == 1)
+				{
+					pollName = PollName();
+
+					Console.WriteLine("Your actions: 1 - show poll, 2 - delete poll, 3 - remove qustion, 0 - exit");
+					Console.Write("Choose action: ");
+					action = Int32.Parse(Console.ReadLine());
+					action = CheckInput(action);
+
+					if (action == 0)
+					{
 						break;
-					case 2:
-						ShowPoll showPoll = new ShowPoll();
-						showPoll.ShowPollMethod(PollName());
-						break;
-					case 3:
-						DeletePoll deletePoll = new DeletePoll();
-						deletePoll.DeletePollMethod(PollName());
-						break;
+					}
+
+					switch (action)
+					{
+						case 1:
+							ShowPoll showPoll = new ShowPoll();
+							showPoll.ShowPollMethod(pollName);
+							break;
+						case 2:
+							DeletePoll deletePoll = new DeletePoll();
+							deletePoll.DeletePollMethod(pollName);
+							break;
+						case 3:
+
+							break;
+					}
 				}
 			}
 		}
@@ -56,6 +80,15 @@ namespace PollAPP
 				return null;
 			}
 			return pollName;
+		}
+		private int CheckInput(int action)
+		{
+			while (action != 1 && action != 2 && action != 3 && action != 0)
+			{
+				Console.Write("Just 1,2,3,0! Action: ");
+				action = Int32.Parse(Console.ReadLine());
+			}
+			return action;
 		}
 
 	}
