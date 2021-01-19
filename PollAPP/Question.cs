@@ -1,10 +1,12 @@
-﻿using System;
+﻿using System.Xml.Serialization;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace PollAPP
 {
-	class Question
+	[Serializable]
+	public class Question
 	{
 		public string Questions { get; set; }
 		public List<Answer> Answers { get; set; }

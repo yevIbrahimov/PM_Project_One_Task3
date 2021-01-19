@@ -1,54 +1,64 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace PollAPP
 {
 	class Manager
 	{
 		AddPoll polls = new AddPoll();
+
 		public void Manage()
 		{
+			
 			while (true)
 			{
 				Console.Write("Manage poll - 1, add poll - 2, or exit - 0: ");
-				var action = Int32.Parse(Console.ReadLine());
-				while (polls.Polls.Count() == 0 && action == 1)
-				{
-					Console.Write("Nothing to manage, add poll or exit: ");
-					action = Int32.Parse(Console.ReadLine());
-				}
-				while (action!=0 && action != 2 && action != 1)
+				var action = Console.ReadLine();
+				while (Int32.Parse(action) != 0 && Int32.Parse(action) != 2 && Int32.Parse(action) != 1 && action.Trim() == "")
 				{
 					Console.Write("Only 0, 1, 2!!! Manage poll - 1, add poll - 2, or exit - 0: ");
-					action = Int32.Parse(Console.ReadLine());
+					action = Console.ReadLine();
 				}
-				if (action == 0)
+				while (polls.Polls.Count() == 0 && Int32.Parse(action) == 1)
+				{
+					Console.Write("Nothing to manage, add poll or exit: ");
+					action = Console.ReadLine();
+				}
+				if (Int32.Parse(action) == 0)
 				{
 					break;
 				}
-				if (action==2)
+				if (Int32.Parse(action) == 2)
 				{
 					AddPoll addPoll = new AddPoll();
 					addPoll.AddPollMethod();
 				}
 				string pollName = "";
-				if (action == 1)
+				if (Int32.Parse(action) == 1)
 				{
 					pollName = PollName();
 
 					Console.WriteLine("Your actions: 1 - show poll, 2 - delete poll, 3 - remove question, 4 - add question, 5 - show statistics, 0 - exit");
 					Console.Write("Choose action: ");
-					action = Int32.Parse(Console.ReadLine());
-					action = CheckInput(action);
+					action = Console.ReadLine();
+					action = CheckInput(Convert.ToInt32(action)).ToString() ;
 
-					if (action == 0)
+					while (Int32.Parse(action) != 0 && Int32.Parse(action) != 1 && Int32.Parse(action) != 2 &&  Int32.Parse(action) != 3 && Int32.Parse(action) != 4 && Int32.Parse(action) != 5 && action.Trim() == "")
+					{
+						Console.Write("1 - show poll, 2 - delete poll, 3 - remove question, 4 - add question, 5 - show statistics, 0 - exit: ");
+						action = Console.ReadLine();
+					}
+
+					if (Int32.Parse(action) == 0)
 					{
 						break;
 					}
 
-					switch (action)
+					switch (Int32.Parse(action))
 					{
 						case 1:
 							ShowPoll showPoll = new ShowPoll();

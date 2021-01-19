@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace PollAPP
 {
@@ -9,6 +11,7 @@ namespace PollAPP
 	{
 		public List<Poll> Polls { get; set; }
 		static List<Poll> polls = new List<Poll>();
+
 		public void AddPollMethod()
 		{
 			while (true)

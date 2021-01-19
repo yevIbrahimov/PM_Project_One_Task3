@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ArrayOfPoll xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Poll>
+    <PollName>qweqwe</PollName>
+    <Question>
+      <Question>
+        <Questions>qweqwe</Questions>
+        <Answers>
+          <Answer>
+            <AnswerName>qweqwe</AnswerName>
+            <Counter>0</Counter>
+          </Answer>
+          <Answer>
+            <AnswerName>wqeqwe</AnswerName>
+            <Counter>0</Counter>
+          </Answer>
+        </Answers>
+      </Question>
+    </Question>
+  </Poll>
+</ArrayOfPoll>

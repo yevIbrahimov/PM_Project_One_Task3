@@ -9,7 +9,6 @@ namespace PollAPP
 		AddPoll poll = new AddPoll();
 		public void InputMethod()
 		{
-			
 			while (true)
 			{
 				Console.Write("You can manage poll or vote: ");
