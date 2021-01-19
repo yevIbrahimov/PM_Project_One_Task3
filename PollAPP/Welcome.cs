@@ -14,6 +14,7 @@ namespace PollAPP
 			while (userChoose.ToUpper()!="MANAGE" && userChoose.ToUpper() != "VOTE")
 			{
 				Console.Write("Only manage or vote: ");
+				userChoose = Console.ReadLine();
 			}
 
 			if (userChoose.ToUpper() == "MANAGE")

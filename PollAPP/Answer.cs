@@ -4,8 +4,7 @@ using System.Text;
 
 namespace PollAPP
 {
-	class RemoveQusetion
+	class Answer
 	{
-
 	}
 }

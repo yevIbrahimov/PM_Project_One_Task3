@@ -34,7 +34,7 @@ namespace PollAPP
 				{
 					pollName = PollName();
 
-					Console.WriteLine("Your actions: 1 - show poll, 2 - delete poll, 3 - remove qustion, 0 - exit");
+					Console.WriteLine("Your actions: 1 - show poll, 2 - delete poll, 3 - remove question, 4 - add question 0 - exit");
 					Console.Write("Choose action: ");
 					action = Int32.Parse(Console.ReadLine());
 					action = CheckInput(action);
@@ -55,7 +55,12 @@ namespace PollAPP
 							deletePoll.DeletePollMethod(pollName);
 							break;
 						case 3:
-
+							DeleteQusetion deleteQusetion = new DeleteQusetion();
+							deleteQusetion.RemoveQuestionMethod(pollName);
+							break;
+						case 4:
+							AddQuestion addQuestion = new AddQuestion();
+							addQuestion.AddQuestionMethod(pollName);
 							break;
 					}
 				}
@@ -83,9 +88,9 @@ namespace PollAPP
 		}
 		private int CheckInput(int action)
 		{
-			while (action != 1 && action != 2 && action != 3 && action != 0)
+			while (action != 1 && action != 2 && action != 3 && action != 4 && action != 0)
 			{
-				Console.Write("Just 1,2,3,0! Action: ");
+				Console.Write("Just 1,2,3,4,0! Action: ");
 				action = Int32.Parse(Console.ReadLine());
 			}
 			return action;

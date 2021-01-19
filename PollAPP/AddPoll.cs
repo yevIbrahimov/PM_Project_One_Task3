@@ -123,7 +123,7 @@ namespace PollAPP
 		}
 
 		
-		private string CheckEmpty(string userInput)
+		public string CheckEmpty(string userInput)
 		{
 			while (userInput.Trim() == "") //check string, is it empty
 			{
