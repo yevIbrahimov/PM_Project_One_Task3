@@ -17,13 +17,12 @@ namespace PollAPP
 			var inputList = new List<Poll>();
 			using (FileStream fs = new FileStream("polls.xml", FileMode.OpenOrCreate))
 			{
-				polls.Polls = (List<Poll>)serializer.Deserialize(fs);
+				inputList = (List<Poll>)serializer.Deserialize(fs);
 			}
-			inputList = polls.Polls;
-
+			
 			for (int i = 0; i < inputList.Count; i++)
 			{
-				polls.Polls[i] = inputList[i];
+				polls.Polls.Add(inputList[i]);
 			}
 		}
 	}

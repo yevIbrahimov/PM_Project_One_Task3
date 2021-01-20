@@ -18,7 +18,17 @@ namespace PollAPP
 			{
 				Console.Write("Manage poll - 1, add poll - 2, or exit - 0: ");
 				var action = Console.ReadLine();
-				while (Int32.Parse(action) != 0 && Int32.Parse(action) != 2 && Int32.Parse(action) != 1 && action.Trim() == "")
+				while (!Int32.TryParse(action, out int result))
+				{
+					Console.Write("Please type numbers! Manage poll - 1, add poll - 2, or exit - 0: ");
+					action = Console.ReadLine();
+				}
+				while (action.Trim() == "")
+				{
+					Console.Write("Please type numbers! Manage poll - 1, add poll - 2, or exit - 0: ");
+					action = Console.ReadLine();
+				}
+				while ( Int32.Parse(action) != 0 && Int32.Parse(action) != 2 && Int32.Parse(action) != 1  )
 				{
 					Console.Write("Only 0, 1, 2!!! Manage poll - 1, add poll - 2, or exit - 0: ");
 					action = Console.ReadLine();

@@ -9,15 +9,22 @@ namespace PollAPP
 	{
 		static void Main(string[] args)
 		{
-			XMLGetClass jsonGet = new XMLGetClass();
-			jsonGet.XMLGetMethod();
-			AddPoll poll = new AddPoll();
-			Welcome welcome = new Welcome();
-			welcome.WelcomeMethod();
-			Input input = new Input();
-			input.InputMethod();
-			XMLAddClass json = new XMLAddClass();
-			json.XMLAddMethod();
+			try
+			{
+				XMLGetClass jsonGet = new XMLGetClass();
+				jsonGet.XMLGetMethod();
+				AddPoll poll = new AddPoll();
+				Welcome welcome = new Welcome();
+				welcome.WelcomeMethod();
+				Input input = new Input();
+				input.InputMethod();
+				XMLAddClass json = new XMLAddClass();
+				json.XMLAddMethod();
+			}
+			catch (Exception e)
+			{
+				throw new Exception($"ERROR!{e}");
+			}
 		}
 	}
 }

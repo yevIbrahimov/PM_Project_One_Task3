@@ -10,6 +10,12 @@ namespace PollAPP
 		
 		public void VoteMethod(List<Poll> polls)
 		{
+			Console.WriteLine("POLLS:");
+			for (int i = 0; i < polls.Count; i++)
+			{
+				Console.WriteLine($" {i+1}. " + polls[i].PollName);
+			}
+
 			string pollName = PollName();
 			List<Question> thisPollQuestions = new List<Question>();
 			foreach (var poll in polls)
@@ -48,18 +54,15 @@ namespace PollAPP
 			AddPoll addPoll = new AddPoll();
 			Console.Write("Poll name: ");
 			var pollName = Console.ReadLine();
-			if (pollName.ToUpper() == "ALL")
-			{
-				return "ALL";
-			}
 
 			var pollNames = from names in addPoll.Polls
 							where names.PollName == pollName
 							select names;
-			if (pollNames.Count() == 0)
+			while (pollNames.Count() == 0)
 			{
-				return null;
-			}
+				Console.Write("No such poll! Poll name: ");
+				pollName = Console.ReadLine();
+			} 
 			return pollName;
 		}
 	}

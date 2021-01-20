@@ -18,4 +18,22 @@
       </Question>
     </Question>
   </Poll>
+  <Poll>
+    <PollName>poll2</PollName>
+    <Question>
+      <Question>
+        <Questions>q2</Questions>
+        <Answers>
+          <Answer>
+            <AnswerName>a1</AnswerName>
+            <Counter>1</Counter>
+          </Answer>
+          <Answer>
+            <AnswerName>a2</AnswerName>
+            <Counter>0</Counter>
+          </Answer>
+        </Answers>
+      </Question>
+    </Question>
+  </Poll>
 </ArrayOfPoll>
