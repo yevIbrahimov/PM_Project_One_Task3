@@ -1,0 +1,22 @@
+{
+  "polls": [
+    {
+      "pollName": "qwewqeq",
+      "question": [
+        {
+          "questions": "qweqw",
+          "answers": [
+            {
+              "answerName": "qweqw",
+              "counter": 0
+            },
+            {
+              "answerName": "wqewqe",
+              "counter": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
